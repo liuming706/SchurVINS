@@ -57,17 +57,24 @@ Open three terminals, launch the schur_vins , rviz and play the bag file respect
 roslaunch svo_ros euroc_vio_stereo.launch
 rviz -d svo_ros/rviz_config.rviz
 rosbag play YOUR_PATH_TO_DATASET/MH_01_easy.bag 
+# 仿真 bag
+roslaunch svo_ros webots_vio_stereo.launch
+rviz -d src/SchurVINS/svo_ros/rviz_config.rviz
+rosbag play ~/workspace/datasets/vio_ros1_2025_0818_1610.bag 
+# 双目 VO webots
+roslaunch svo_ros webots_stereo_frontend_imu.launch
+rosbag play ~/workspace/datasets/vio_ros1_2025_0818_1610.bag 
 ```
 # 5. Reproducibility
 There might be minor differences between the released version and the results in the paper. Please note that multi-thread performance has some randomness due to CPU utilization.
 On EuRoC datasets, please note to skip the first few seconds of datasets with the following configurations for reproducibility.
 
 
-|||||||||||
-|----|------|----|----|------|----|----|------|----|----|
-|**MH1**|**MH2**|**MH3**|**MH4**|**MH5**|**V11**|**V12**|**V13**|**V21**|**V22**|
-|30s|30s|10s|13s|15s|0s|0s|2s|0s|0s|
-|||||||||||
+|         |         |         |         |         |         |         |         |         |         |
+| ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- |
+| **MH1** | **MH2** | **MH3** | **MH4** | **MH5** | **V11** | **V12** | **V13** | **V21** | **V22** |
+| 30s     | 30s     | 10s     | 13s     | 15s     | 0s      | 0s      | 2s      | 0s      | 0s      |
+|         |         |         |         |         |         |         |         |         |         |
 
 # 6. Security
 
